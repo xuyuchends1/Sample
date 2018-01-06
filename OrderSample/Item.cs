@@ -10,6 +10,6 @@ namespace OrderSample
     {
         public string ItemName { get; set; }
         public string ItemCode { get; set; }
-        public double  Price { get; set; }
+        public  virtual double  Price { get; set; }
     }
 }
