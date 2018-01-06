@@ -11,25 +11,15 @@ public    class Order
         public int Status { get; set; }
         public Items Items { get; set; }
 
-        public Order(Items items)
+        private IOperationNormalPrice ioperationNormalPrice;
+        public Order(Items items, IOperationNormalPrice ioperationNormalPrice)
         {
             this.Items = items;
+            this.ioperationNormalPrice = ioperationNormalPrice;
         }
         public double GetPrices()
         {
-            var normalItemList = Items.GetNormalItems();
-            double result = 0.0;
-            foreach (var item in normalItemList)
-            {
-                result += item.Price;
-            }
-
-            var VIPItemList = Items.GetVIPItems();
-            foreach (var item in VIPItemList)
-            {
-                result += item.Price;
-            }
-            return result;
+            return this.ioperationNormalPrice.GetPrices(this);
         }
     }
 }
