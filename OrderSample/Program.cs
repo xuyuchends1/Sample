@@ -11,7 +11,8 @@ namespace OrderSample
         static void Main(string[] args)
         {
             Items items = new Items();
-            Order order = new Order(items);
+            IOperationNormalPrice IOperationNormalPrice = new OperationNormalPrices();
+            Order order = new Order(items, IOperationNormalPrice);
             var totalPrice = order.GetPrices();
         }
     }
