@@ -13,11 +13,11 @@ namespace OrderSample
 
         public Items()
         {
-            this.Add(new Item() { ItemCode = VIPString + "_001", ItemName = "光明牛奶", Price = 36.5 });
-            this.Add(new Item() { ItemCode = NormalString + "_001", ItemName = "红富士苹果", Price = 30.5 });
-            this.Add(new Item() { ItemCode = VIPString + "_002", ItemName = "蒙牛牛奶", Price = 10 });
-            this.Add(new Item() { ItemCode = NormalString + "_002", ItemName = "进口苹果", Price = 60 });
-            this.Add(new Item() { ItemCode = NormalString + "_003", ItemName = "进口苹果", Price = 0 });
+            this.Add(new VipItem() { ItemCode = VIPString + "_001", ItemName = "光明牛奶", Price = 36.5 });
+            this.Add(new NormalItem() { ItemCode = NormalString + "_001", ItemName = "红富士苹果", Price = 30.5 });
+            this.Add(new VipItem() { ItemCode = VIPString + "_002", ItemName = "蒙牛牛奶", Price = 10 });
+            this.Add(new NormalItem() { ItemCode = NormalString + "_002", ItemName = "进口苹果", Price = 60 });
+            this.Add(new NormalItem() { ItemCode = NormalString + "_003", ItemName = "进口苹果", Price = 0 });
         }
 
         public void SetItems(List<Item> items)

@@ -22,11 +22,9 @@ namespace OrderSample
             }
             set
             {
-                this.items = value ;
+                this.items = value;
             }
         }
-
-
 
         private IOperationNormalPrice ioperationNormalPrice;
         public Order(Items items, IOperationNormalPrice ioperationNormalPrice)
@@ -38,5 +36,25 @@ namespace OrderSample
         {
             return this.ioperationNormalPrice.GetPrices(this);
         }
+
+        public static Order ConvertVipOrder(Order normalOrder)
+        {
+            if (normalOrder == null || normalOrder.items == null || normalOrder.items.Count == 0)
+                return null;
+            Order result = new Order(null, normalOrder.ioperationNormalPrice) { Status = normalOrder.Status, Items = new Items() };
+            result.items.Clear();
+            // 每个item都会调用
+            normalOrder.items.ForEach(item =>
+            {
+                result.items.Add(new Item
+                {
+                    ItemCode = item.ItemCode,
+                    Price = item is NormalItem ? item.Price - 20 : item.Price,
+                    ItemName = item.ItemName
+                });
+            });
+            return result;
+        }
     }
 }
+

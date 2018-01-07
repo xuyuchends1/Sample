@@ -14,6 +14,8 @@ namespace OrderSample
             IOperationNormalPrice IOperationNormalPrice = new OperationNormalPrices();
             Order order = new Order(items, IOperationNormalPrice);
             var totalPrice = order.GetPrices();
+
+            Order vipOrder = Order.ConvertVipOrder(order);
         }
     }
 }
