@@ -10,18 +10,14 @@ namespace OrderSample
     {
         public Order ConvertVipOrder(Order normalOrer)
         {
-            if (normalOrer == null || normalOrer.Items == null || normalOrer.Items.Count == 0)
+            if (!ValidatorConvertNormalOrder(normalOrer))
                 return null;
+
             Order result = new Order(new OperationNormalPrices())
             { Status = normalOrer.Status, Items = new Items() };
             normalOrer.Items.ForEach(item =>
             {
-                result.Items.Add(new Item()
-                {
-                    ItemCode = item.ItemCode,
-                    Price = item.Price - 20,
-                    ItemName = item.ItemName
-                });
+                result.Items.Add(BuildVipItemNormal(item));
             });
             return result;
         }
@@ -31,6 +27,17 @@ namespace OrderSample
             if (normalOrder == null || normalOrder.Items == null || normalOrder.Items.Count == 0)
                 return false;
             return true;
+        }
+
+        private Item BuildVipItemNormal(Item item)
+        {
+            Item result = new Item()
+            {
+                ItemCode = item.ItemCode,
+                Price = item.Price - 20,
+                ItemName = item.ItemName
+            };
+            return result;
         }
     }
 }
