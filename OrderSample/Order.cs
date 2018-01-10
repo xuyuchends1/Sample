@@ -27,9 +27,8 @@ namespace OrderSample
         }
 
         private IOperationNormalPrice ioperationNormalPrice;
-        public Order(Items items, IOperationNormalPrice ioperationNormalPrice)
+        public Order(IOperationNormalPrice ioperationNormalPrice)
         {
-            this.Items = items;
             this.ioperationNormalPrice = ioperationNormalPrice;
         }
         public double GetPrices()
@@ -41,7 +40,7 @@ namespace OrderSample
         {
             if (normalOrder == null || normalOrder.items == null || normalOrder.items.Count == 0)
                 return null;
-            Order result = new Order(null, normalOrder.ioperationNormalPrice) { Status = normalOrder.Status, Items = new Items() };
+            Order result = new Order(normalOrder.ioperationNormalPrice) { Status = normalOrder.Status, Items = new Items() };
             result.items.Clear();
             // 每个item都会调用
             normalOrder.items.ForEach(item =>

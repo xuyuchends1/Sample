@@ -12,7 +12,7 @@ namespace OrderSample
         {
             Items items = new Items();
             IOperationNormalPrice IOperationNormalPrice = new OperationNormalPrices();
-            Order order = new Order(items, IOperationNormalPrice);
+            Order order = new Order(IOperationNormalPrice);
             var totalPrice = order.GetPrices();
 
             Order vipOrder = Order.ConvertVipOrder(order);
