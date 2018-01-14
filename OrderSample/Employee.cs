@@ -8,6 +8,8 @@ namespace OrderSample
 {
    public class Employee
     {
+        public string Name { get; set; }
+        public string Address { get; set; }
         // 只有SourceType== Salary 才转账
         public void TransferToEmployee([TransferSource(TransferType = TransferSourceType.Salary)]int number)
         {
