@@ -10,17 +10,21 @@ namespace OrderSample
     {
         static void Main(string[] args)
         {
-            Items items = new Items();
-            IOperationNormalPrice IOperationNormalPrice = new OperationNormalPrices();
-            Order order = new Order(IOperationNormalPrice);
-            var totalPrice = order.GetPrices();
+            //Items items = new Items();
+            //IOperationNormalPrice IOperationNormalPrice = new OperationNormalPrices();
+            //Order order = new Order(IOperationNormalPrice);
+            //var totalPrice = order.GetPrices();
 
-            Order vipOrder = Order.ConvertVipOrder(order);
+            //Order vipOrder = Order.ConvertVipOrder(order);
 
             //MergeOrders<Order> merge = new MergeOrders<Order>();
             //VipOrder order1 = new VipOrder(new OperationNormalPrices());
             //VipOrder order2 = new VipOrder(new OperationNormalPrices());
             //IMergeOrderList<VipOrder> result = merge.Merge(order1, order2);
+            Employee employee = new Employee();
+            HR hr = new HR();
+            hr.ToSalary(employee);
+            hr.ToSalary(employee);
         }
     }
 }
