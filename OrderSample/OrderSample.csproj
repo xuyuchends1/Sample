@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ConvertOrderHelper.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeFactory.cs" />
     <Compile Include="HR.cs" />
     <Compile Include="IOperationNormalPrice.cs" />
     <Compile Include="Item.cs" />

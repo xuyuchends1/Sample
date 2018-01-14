@@ -15,5 +15,9 @@ namespace OrderSample
             else
                 return new Employee() { Name = name, Address = address };
         }
+        public static Employee CreateEmployee(string name, string address)
+        {
+                return new Employee() { Name = name, Address = address };
+        }
     }
 }

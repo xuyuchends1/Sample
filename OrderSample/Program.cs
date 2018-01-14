@@ -21,10 +21,23 @@ namespace OrderSample
             //VipOrder order1 = new VipOrder(new OperationNormalPrices());
             //VipOrder order2 = new VipOrder(new OperationNormalPrices());
             //IMergeOrderList<VipOrder> result = merge.Merge(order1, order2);
-            Employee employee = new Employee();
-            HR hr = new HR();
-            hr.ToSalary(employee);
-            hr.ToSalary(employee);
+            //Employee employee = new Employee();
+            //HR hr = new HR();
+            //hr.ToSalary(employee);
+            //hr.ToSalary(employee);
+
+            Employee employee = EmployeeFactory.CreateEmployee("abc", "strat1");
+
+            employee.EmployeeNameEvent += Employee_EmployeeNameEvent;
+            employee.ChangeName("acc");
+
         }
+
+        private static void Employee_EmployeeNameEvent(string changedName)
+        {
+            Console.WriteLine(changedName);
+            Console.ReadLine();
+        }
+
     }
 }
