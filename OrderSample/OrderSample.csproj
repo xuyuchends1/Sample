@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConvertOrderHelper.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="IOperationNormalPrice.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Items.cs" />
