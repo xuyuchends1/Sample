@@ -8,10 +8,10 @@ namespace OrderSample
 {
     public class EmployeeFactory
     {
-        public static Employee CreateEmployee(string name, string address)
+        public static Employee CreateEmployee(string name, string address, Func<string, bool> logic, Func<string, string> filterName)
         {
-            if (name.StartsWith("VIP"))
-                return new Employee() { Name = name.Replace("VIP", ""), Address = address };
+            if (logic(name))
+                return new Employee() { Name = filterName(name), Address = address };
             else
                 return new Employee() { Name = name, Address = address };
         }
