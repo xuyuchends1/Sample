@@ -27,5 +27,16 @@ namespace OrderSample
         {
             distribute.DistributeOrder(order);
         }
+        public void VipOrderDistribute(Order order)
+        {
+            distribute.DistributeVipOrder(order);
+        }
+    }
+    public static class DistributeExtends
+    {
+        public static void DistributeVipOrder(this IDistribute<Order> distribute,Order order )
+        {
+
+        }
     }
 }
