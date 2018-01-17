@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,9 +48,13 @@
     <Compile Include="EmployeeFactory.cs" />
     <Compile Include="HR.cs" />
     <Compile Include="IDistribute.cs" />
+    <Compile Include="ILogSaveProvider.cs" />
     <Compile Include="IOperationNormalPrice.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Items.cs" />
+    <Compile Include="LogEntity.cs" />
+    <Compile Include="LogSaveBaseProvider.cs" />
+    <Compile Include="LogSaveLocalhostProvider.cs" />
     <Compile Include="MergeOrders.cs" />
     <Compile Include="NormalItem.cs" />
     <Compile Include="OperationNormalPrices.cs" />

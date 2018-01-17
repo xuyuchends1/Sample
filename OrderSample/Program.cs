@@ -26,18 +26,21 @@ namespace OrderSample
             //hr.ToSalary(employee);
             //hr.ToSalary(employee);
 
-            Employee employee = EmployeeFactory.CreateEmployee("abc", "strat1");
+            //Employee employee = EmployeeFactory.CreateEmployee("abc", "strat1");
 
-            employee.EmployeeNameEvent += Employee_EmployeeNameEvent;
-            employee.ChangeName("acc");
+            //employee.EmployeeNameEvent += Employee_EmployeeNameEvent;
+            //employee.ChangeName("acc");
 
+            LogEntity logEntity = new LogEntity() { Type = LogType.Exception, Level = LogLevel.Error, Content = new LogContent { LogTrackInfo = "Program.Main", Message = "字符串不能为空" } };
+            ILogSaveProvider saveProvider = new LogSaveLocalhostProvider();
+            saveProvider.SaveLog(logEntity);
         }
 
-        private static void Employee_EmployeeNameEvent(string changedName)
-        {
-            Console.WriteLine(changedName);
-            Console.ReadLine();
-        }
+        //private static void Employee_EmployeeNameEvent(string changedName)
+        //{
+        //    Console.WriteLine(changedName);
+        //    Console.ReadLine();
+        //}
 
     }
 }
