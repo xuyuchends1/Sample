@@ -31,9 +31,14 @@ namespace OrderSample
             //employee.EmployeeNameEvent += Employee_EmployeeNameEvent;
             //employee.ChangeName("acc");
 
-            LogEntity logEntity = new LogEntity() { Type = LogType.Exception, Level = LogLevel.Error, Content = new LogContent { LogTrackInfo = "Program.Main", Message = "字符串不能为空" } };
-            ILogSaveProvider saveProvider = new LogSaveLocalhostProvider();
-            saveProvider.SaveLog(logEntity);
+            //LogEntity logEntity = new LogEntity() { Type = LogType.Exception, Level = LogLevel.Error, Content = new LogContent { LogTrackInfo = "Program.Main", Message = "字符串不能为空" } };
+            //ILogSaveProvider saveProvider = new LogSaveLocalhostProvider();
+            //saveProvider.SaveLog(logEntity);
+
+            Person person = new Person { Name = "Tom" }
+    .Run()
+    .Sing()
+    .Swim();
         }
 
         //private static void Employee_EmployeeNameEvent(string changedName)

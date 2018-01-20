@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderSample
 {
-  public  interface ILogSaveProvider
+    public interface ILogSaveProvider
     {
         bool SaveLog(LogEntity logEntity);
     }
