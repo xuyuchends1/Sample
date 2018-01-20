@@ -35,7 +35,7 @@ namespace OrderSample
             //ILogSaveProvider saveProvider = new LogSaveLocalhostProvider();
             //saveProvider.SaveLog(logEntity);
 
-            Person person = new Person { Name = "Tom" }
+            Person person = new Person("Tom")
     .Run()
     .Sing()
     .Swim();
